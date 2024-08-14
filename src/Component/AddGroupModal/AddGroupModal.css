@@ -1,0 +1,42 @@
+.groups-table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.groups-table th,
+.groups-table td {
+  border: none;
+  padding: 10px;
+  padding-left: 30px;
+  text-align: left;
+  border-bottom: 1px rgba(242, 242, 250, 1) solid;
+  color: rgba(102, 102, 102, 1);
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  font-family: 'Poppins' !important;
+
+}
+
+.down{
+  margin-top: 220px !important;
+}
+
+
+.groups-table th {
+  
+  background-color: rgba(242, 242, 250, 1);
+  color: rgba(40, 53, 146, 1);
+  font-family: 'Poppins';
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  border-radius: 20px 20px 0px 0px;
+
+}
+.plus{
+  color: rgba(40, 53, 146, 1);
+  font-size: 18px !important;
+}
+
+

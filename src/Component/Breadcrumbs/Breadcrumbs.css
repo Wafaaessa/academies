@@ -1,0 +1,21 @@
+/* Breadcrumbs.css */
+.breadcrumbs {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: rgba(102, 102, 102, 1);
+}
+
+.breadcrumbs a {
+    color: rgba(170, 181, 193, 1);
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-dot {
+    margin: 0 8px;
+    font-size: 20px;
+    color: rgba(224, 27, 132, 1);
+}

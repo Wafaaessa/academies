@@ -1,0 +1,61 @@
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.form-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-buttons button:hover {
+  opacity: 0.8;
+}
+
+.modal-content3 textarea {
+  height: 45px;
+  width: 629px;
+
+  border: 1px solid rgba(225, 228, 255, 1);
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Poppins" !important;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.form-radio input[type="radio"] {
+  margin-right: 10px !important;
+  accent-color: rgba(109, 100, 232, 1);
+  cursor: pointer;
+}
+.cash {
+  color: rgba(102, 102, 102, 1);
+  font-size: 14px !important;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.down2 {
+  position: absolute;
+  bottom: 80px !important;
+  width: 35%;
+}

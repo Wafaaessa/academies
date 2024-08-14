@@ -1,0 +1,232 @@
+.user-profile {
+  padding: 20px;
+}
+
+.profile-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.profile-nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.profile-nav a {
+  text-decoration: none;
+  color: rgba(40, 53, 146, 1);
+  padding: 5px 10px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.profile-nav a.active {
+  color: rgba(109, 100, 232, 1);
+  border-bottom-color: rgba(109, 100, 232, 1);
+  font-weight: 500 !important;
+}
+
+.tab-content {
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.courses-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.courses-table th,
+.courses-table td {
+  border: none;
+  padding: 10px;
+  padding-left: 30px;
+  text-align: left;
+  border-bottom: 1px rgba(242, 242, 242, 0.6667) solid;
+  color: rgba(102, 102, 102, 1);
+}
+
+.courses-table th {
+  background-color: rgba(242, 242, 250, 1);
+  color: rgba(40, 53, 146, 1);
+  font-family: "Poppins";
+}
+
+.textdest td,
+.textdest th {
+  text-align: left !important;
+}
+
+/* payment */
+.payment-content {
+  text-align: center;
+}
+
+.photo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.photo-container img {
+  max-width: 100%;
+  height: auto;
+}
+.payment-content p {
+  color: rgba(40, 53, 146, 1);
+  font-weight: 500;
+  font-size: 20px;
+}
+.dash-photo {
+  margin-top: 150px;
+}
+
+/* minus */
+.minus {
+  display: flex !important;
+
+  justify-content: space-between !important;
+}
+.fa-user-minus {
+  color: #e01b84;
+  margin-right: 10px;
+  font-size: 17px;
+}
+.remove-course-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.remove-course-btn:hover {
+  color: darkred !important;
+}
+/* search top */
+.search-top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  margin-bottom: 30px;
+}
+.search-top .search-input {
+  width: 499px;
+}
+.search-icon {
+  position: absolute;
+  right: 940px;
+  color: rgba(40, 53, 146, 1);
+  font-size: 17px;
+}
+/* arrow */
+.back-arrow {
+  color: rgba(40, 53, 146, 1) !important;
+  text-decoration: none !important;
+}
+.fa-chevron-left {
+  margin-right: 20px;
+}
+
+.filter-form {
+  position: absolute;
+  top: 363px;
+  left: 508px;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  z-index: 1000;
+  border-radius: 10px;
+  width: 367px;
+  font-family: "Poppins";
+}
+
+.filter-form h4 {
+  margin: 0 0 10px;
+  color: rgba(40, 53, 146, 1);
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  font-family: "Poppins" !important;
+}
+
+.filter-form h3 {
+  margin: 0 0 10px;
+  color: rgba(109, 100, 232, 1);
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  font-family: "Poppins" !important;
+}
+.filter-field {
+  margin-bottom: 10px;
+}
+.filter-field input[type="date" i] {
+  color: rgba(138, 152, 172, 1) !important;
+  font-size: 15px !important;
+  text-transform: uppercase;
+}
+.filter-field label {
+  display: block;
+  margin-bottom: 5px;
+  color: rgba(102, 102, 102, 1);
+}
+
+.apply-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+/* modal */
+
+/* payment-table */
+.action-buttons {
+  width: 390px;
+  position: absolute;
+  top: 300px;
+  left: 120px;
+}
+.back-button {
+  width: 390px !important;
+  border: 1px solid rgba(109, 100, 232, 1);
+  border-radius: 10px;
+  position: relative;
+}
+.toggle-btn {
+  padding: 10px 20px;
+  margin-right: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: rgba(255, 255, 255, 1);
+  font-size: 17px;
+  font-weight: 400;
+  font-family: "Poppins" !important;
+  color: rgba(109, 100, 232, 1);
+  border-radius: 10px;
+}
+
+.toggle-btn.active {
+  background-color: rgba(228, 227, 249, 1);
+  color: rgba(109, 100, 232, 1);
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 400;
+  font-family: "Poppins" !important;
+  border-right: 1px solid rgba(109, 100, 232, 1);
+}
+.but2.active {
+  border-left: 1px solid rgba(109, 100, 232, 1);
+  border-right: none;
+  position: absolute;
+  right: -5px;
+}
+/* filter in payment */
+.payment-page-filter-button {
+  margin-left: 360px !important;
+  margin-right: 20px;
+  position: absolute;
+  top: 300px;
+}
