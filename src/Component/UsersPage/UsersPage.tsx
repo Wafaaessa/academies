@@ -535,7 +535,7 @@ const UsersPage: React.FC = () => {
                   type="date"
                   name="registration"
                   className="form-control da"
-                  value={addingUser?.registration || ""}
+                  value={editingUser?.registration || ""}
                   onChange={handleInputChange}
                   placeholder="DD/MM/YY"
                 />
