@@ -153,8 +153,9 @@ const PaymentsPage: React.FC = () => {
           <h3>Enrollment Date</h3>
           <div className="row mb-3 mt-3">
             <div className="filter-field  col-md-6">
-              <label> From :</label>
+              <label  htmlFor="start-date"> From :</label>
               <input
+              id="start-date"
                 type="date"
                 value={startDate}
                 onChange={(e) => handleDateChange("start", e.target.value)}
@@ -162,8 +163,9 @@ const PaymentsPage: React.FC = () => {
               />
             </div>
             <div className="filter-field col-md-6 mb-3">
-              <label>To :</label>
+              <label  htmlFor="end-date">To :</label>
               <input
+              id="end-date"
                 type="date"
                 value={endDate}
                 onChange={(e) => handleDateChange("end", e.target.value)}

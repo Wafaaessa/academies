@@ -1,5 +1,5 @@
 import React from 'react';
-import dash from '../../assests/dashborad.png'; // Adjust the path as needed
+import dash from '../../assests/dashborad.png'; 
 import './../UserProfile/UserProfile.css';
 
 const Dashoard: React.FC = () => {
@@ -8,7 +8,7 @@ const Dashoard: React.FC = () => {
         <div className="search-top">
         <input type="text" placeholder="Search" className="search-input" />
     </div>
-        <div className="payment-content dash-photo">
+        <div className="payment-content dash-photo" data-testid="dash-page">
             <div className="photo-container ">
                 <img src={dash} alt="Files" />
             </div>
@@ -16,6 +16,6 @@ const Dashoard: React.FC = () => {
         </div>
         </>
     );
-};
+}; 
 
 export default Dashoard;

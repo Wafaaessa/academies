@@ -15,8 +15,8 @@ const AddCourseModal: React.FC<AddCourseModalProps> = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content3">
+    <div className="modal-overlay" data-testid="modal-overlay">
+      <div className="modal-content3" data-testid="modal-content">
         <h2>Add to course</h2>
         <hr />
         <input
@@ -28,7 +28,7 @@ const AddCourseModal: React.FC<AddCourseModalProps> = ({ isOpen, onClose }) => {
         <div className="course-list ">
           <div className="row mt-4">
             <div className="col-md-6 cards px-3 ">
-              <div className="card-content">
+              <div className="card-content" data-testid="card-content">
                 <h3>Course Name</h3>
                 <p>Description</p>
                 <button className="icon-button">
@@ -38,7 +38,7 @@ const AddCourseModal: React.FC<AddCourseModalProps> = ({ isOpen, onClose }) => {
             </div>
 
             <div className="col-md-6 cards px-3 ">
-              <div className="card-content">
+              <div className="card-content" data-testid="card-content">
                 <h3>Course Name</h3>
                 <p>Description</p>
                 <button className="icon-button">
@@ -48,7 +48,7 @@ const AddCourseModal: React.FC<AddCourseModalProps> = ({ isOpen, onClose }) => {
             </div>
 
             <div className="col-md-6 cards px-3">
-              <div className="card-content">
+              <div className="card-content" data-testid="card-content">
                 <h3>Course Name</h3>
                 <p>Description</p>
                 <button className="icon-button">
@@ -58,7 +58,7 @@ const AddCourseModal: React.FC<AddCourseModalProps> = ({ isOpen, onClose }) => {
             </div>
 
             <div className="col-md-6 cards px-3">
-              <div className="card-content">
+              <div className="card-content" data-testid="card-content">
                 <h3>Course Name</h3>
                 <p>Description</p>
                 <button className="icon-button">
@@ -68,7 +68,7 @@ const AddCourseModal: React.FC<AddCourseModalProps> = ({ isOpen, onClose }) => {
             </div>
 
             <div className="col-md-6 cards px-3">
-              <div className="card-content">
+              <div className="card-content" data-testid="card-content">
                 <h3>Course Name</h3>
                 <p>Description</p>
                 <button className="icon-button">
@@ -78,7 +78,7 @@ const AddCourseModal: React.FC<AddCourseModalProps> = ({ isOpen, onClose }) => {
             </div>
 
             <div className="col-md-6 cards px-3">
-              <div className="card-content">
+              <div className="card-content" data-testid="card-content">
                 <h3>Course Name</h3>
                 <p>Description</p>
                 <button className="icon-button">

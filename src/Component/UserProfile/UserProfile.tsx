@@ -75,7 +75,7 @@ const UserProfile: React.FC = () => {
     }
   };
   return (
-    <div className="user-profile">
+    <div className="user-profile" data-testid="user-profile">
       <header>
         <div className="search-top">
           <input type="text" placeholder="Search" className="search-input" />
@@ -176,8 +176,9 @@ const UserProfile: React.FC = () => {
           <h3>Enrollment Date</h3>
           <div className="row mb-3 mt-3">
             <div className="filter-field  col-md-6">
-              <label> From :</label>
+              <label  htmlFor="fromDate"> From :</label>
               <input
+              id="fromDate"
                 type="date"
                 value={fromDate}
                 onChange={(e) => handleFilterChange("fromDate", e.target.value)}
@@ -185,8 +186,9 @@ const UserProfile: React.FC = () => {
               />
             </div>
             <div className="filter-field col-md-6 mb-3">
-              <label>To :</label>
+              <label htmlFor="toDate">To :</label>
               <input
+              id="toDate"
                 type="date"
                 value={toDate}
                 onChange={(e) => handleFilterChange("toDate", e.target.value)}

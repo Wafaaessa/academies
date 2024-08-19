@@ -89,6 +89,7 @@ const CoursesPage: React.FC<CoursesPageProps> = ({ fromDate, toDate }) => {
                   <button
                     onClick={() => handleRemoveCourse(course)}
                     className="remove-course-btn"
+                     data-testid="remove-course-btn"
                   >
                     <i className="fa-solid fa-user-minus"></i>
                   </button>

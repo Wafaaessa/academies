@@ -14,15 +14,15 @@ const Sidebar: React.FC = () => {
     };
 
     const navItems = [
-        { path: '/dashboard', text: 'Dashboard', icon: faTachometerAlt },
-        { path: '/users', text: 'Users', icon: faUsers },
-        { path: '/courses', text: 'Courses', icon: faBook },
-        { path: '/reports', text: 'Reports', icon: faChartBar },
-        { path: '/settings', text: 'Settings', icon: faCog }
+        { path: '/dashboard', text: 'Dashboard', icon: faTachometerAlt, testId: 'dashboard-link' },
+        { path: '/users', text: 'Users', icon: faUsers, testId: 'users-link' },
+        { path: '/courses', text: 'Courses', icon: faBook, testId: 'courses-link' },
+        { path: '/reports', text: 'Reports', icon: faChartBar, testId: 'reports-link' },
+        { path: '/settings', text: 'Settings', icon: faCog, testId: 'settings-link' }
     ];
 
     return (
-        <div className={`sidebar ${expanded ? 'expanded' : ''}`}>
+        <div data-testid="sidebar" className={`sidebar ${expanded ? 'expanded' : ''}`}>
             <div className="logo-container">
                 <img src={logo} alt="Logo" className="logo" />
             </div> 
@@ -31,7 +31,8 @@ const Sidebar: React.FC = () => {
             </div>
             {navItems.map((item, index) => (
                 <div className="sidebar-item " key={index}>
-                  <NavLink 
+                  <NavLink
+                    data-testid={item.testId} 
                         to={item.path} 
                         className={({ isActive }) => isActive ? 'active' : undefined}
                     >

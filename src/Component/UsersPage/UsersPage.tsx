@@ -295,7 +295,7 @@ const UsersPage: React.FC = () => {
   };
 
   return (
-    <div className="users-page">
+    <div className="users-page" data-testid="users-page" >
       {/* search */}
       <div className="search-top">
         <input type="text" placeholder="Search" className="search-input" />

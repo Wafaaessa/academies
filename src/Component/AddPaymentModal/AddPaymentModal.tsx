@@ -35,8 +35,9 @@ const AddPaymentModal: React.FC<AddPaymentModalProps> = ({
         <hr />
         <form>
           <div className="form-group ">
-            <label className="form-label">Payment date</label>
+            <label htmlFor="payment-date" className="form-label">Payment date</label>
             <input
+              id="payment-date"
               type="date"
               className="form-control"
               value={paymentDate}
@@ -44,8 +45,9 @@ const AddPaymentModal: React.FC<AddPaymentModalProps> = ({
             />
           </div>
           <div className="form-group">
-            <label className="form-label">Paid amount</label>
+            <label htmlFor="paid-amount" className="form-label">Paid amount</label>
             <input
+             id="paid-amount"
               type="number"
               className="form-control"
               value={paidAmount}
@@ -117,6 +119,7 @@ const AddPaymentModal: React.FC<AddPaymentModalProps> = ({
               {anotherReason && (
                 <div className="col-md-12 d-flex justify-content-center">
                   <textarea
+                   id="reason-text"
                     placeholder="Type the reason here"
                     value={reasonText}
                     onChange={(e) => setReasonText(e.target.value)}
