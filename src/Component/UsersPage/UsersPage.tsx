@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import Breadcrumbs from "./../Breadcrumbs/Breadcrumbs";
 import "./UsersPage.css";
 import think from "../../assests/Thinking 1.png";
+import noUsers from "../../assests/no users.png";
 
 interface User {
   id: number;
@@ -295,7 +296,7 @@ const UsersPage: React.FC = () => {
   };
 
   return (
-    <div className="users-page" data-testid="users-page" >
+    <div className="users-page" data-testid="users-page">
       {/* search */}
       <div className="search-top">
         <input type="text" placeholder="Search" className="search-input" />
@@ -409,64 +410,79 @@ const UsersPage: React.FC = () => {
         </div>
       </div>
       {/* table list */}
-      <table className="users-table">
-        <thead>
-          <tr>
-            <th>
-              
-              <input
-                type="checkbox"
-                checked={selectAll}
-                onChange={handleSelectAllChange}
-              />
-            </th>
-            <th>User</th>
-            <th>Phone</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Registration</th>
-            <th>Last Login</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredUsers.map((user) => (
-            <tr key={user.id}>
-              <td>
+      {users.length > 0 ? (
+        <table className="users-table">
+          <thead>
+            <tr>
+              <th>
                 <input
                   type="checkbox"
-                  checked={user.selected}
-                  onChange={() => handleCheckboxChange(user.id)}
-                  className="userName"
+                  checked={selectAll}
+                  onChange={handleSelectAllChange}
                 />
-              </td>
-              <td onClick={() => handleUserClick(user)} className="userName">
-                {user.name}
-              </td>
-              <td>{user.phone}</td>
-              <td>{user.email}</td>
-              <td>{user.role}</td>
-              <td>{user.registration}</td>
-              <td>{user.lastLogin}</td>
-              <td>
-                <button
-                  className="action-btn edit"
-                  onClick={() => handleEdit(user)}
-                >
-                  <FontAwesomeIcon icon={faEdit} />
-                </button>
-                <button
-                  className="action-btn delete"
-                  onClick={() => handleDelete(user)}
-                >
-                  <FontAwesomeIcon icon={faTrashAlt} />
-                </button>
-              </td>
+              </th>
+              <th>User</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Registration</th>
+              <th>Last Login</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-
+          </thead>
+          <tbody>
+            {filteredUsers.map((user) => (
+              <tr key={user.id}>
+                <td>
+                  <input
+                    type="checkbox"
+                    checked={user.selected}
+                    onChange={() => handleCheckboxChange(user.id)}
+                    className="userName"
+                  />
+                </td>
+                <td onClick={() => handleUserClick(user)} className="userName">
+                  {user.name}
+                </td>
+                <td>{user.phone}</td>
+                <td>{user.email}</td>
+                <td>{user.role}</td>
+                <td>{user.registration}</td>
+                <td>{user.lastLogin}</td>
+                <td>
+                  <button
+                    className="action-btn edit"
+                    onClick={() => handleEdit(user)}
+                  >
+                    <FontAwesomeIcon icon={faEdit} />
+                  </button>
+                  <button
+                    className="action-btn delete"
+                    onClick={() => handleDelete(user)}
+                  >
+                    <FontAwesomeIcon icon={faTrashAlt} />
+                  </button>
+                </td>
+              </tr>
+            ))}
+            {filteredUsers.length === 0 && (
+              <tr>
+                <td colSpan={3} style={{ textAlign: "center" }}>
+                  No users found for the selected date range.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      ) : (
+        /////////no users added///////////
+        <div className="payment-content ">
+          <div className="photo-container mt-5">
+            <img src={noUsers} alt="noUsers" />
+          </div>
+          <p>No users added yet</p>
+        </div>
+      )}
       {/* Edit User Modal */}
       <div id="editModal" className="modal">
         <div className="modal-content">

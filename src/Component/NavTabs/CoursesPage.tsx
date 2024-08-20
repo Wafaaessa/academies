@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import "./../UserProfile/UserProfile.css";
 import "./../UsersPage/UsersPage.css";
-
 import think from "../../assests/Thinking 1.png";
+import noCourse from "../../assests/no courses.png";
 
 interface Course {
   id: number;
@@ -70,42 +70,51 @@ const CoursesPage: React.FC<CoursesPageProps> = ({ fromDate, toDate }) => {
 
   return (
     <div>
-      <table className="courses-table">
-        <thead>
-          <tr>
-            <th>Course</th>
-            <th>Role</th>
-            <th>Enrolled Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredCourses.map((course) => (
-            <tr key={course.id}>
-              <td>{course.name}</td>
-              <td>{course.role}</td>
-              <td>
-                <div className="minus">
-                  {course.enrolledDate}
-                  <button
-                    onClick={() => handleRemoveCourse(course)}
-                    className="remove-course-btn"
-                     data-testid="remove-course-btn"
-                  >
-                    <i className="fa-solid fa-user-minus"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
-          ))}
-          {filteredCourses.length === 0 && (
+      {courses.length > 0 ? (
+        <table className="courses-table">
+          <thead>
             <tr>
-              <td colSpan={3} style={{ textAlign: "center" }}>
-                No courses found for the selected date range.
-              </td>
+              <th>Course</th>
+              <th>Role</th>
+              <th>Enrolled Date</th>
             </tr>
-          )}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {filteredCourses.map((course) => (
+              <tr key={course.id}>
+                <td>{course.name}</td>
+                <td>{course.role}</td>
+                <td>
+                  <div className="minus">
+                    {course.enrolledDate}
+                    <button
+                      onClick={() => handleRemoveCourse(course)}
+                      className="remove-course-btn"
+                      data-testid="remove-course-btn"
+                    >
+                      <i className="fa-solid fa-user-minus"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+            {filteredCourses.length === 0 && (
+              <tr>
+                <td colSpan={3} style={{ textAlign: "center" }}>
+                  No courses found for the selected date range.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      ) : (
+        <div className="payment-content ">
+          <div className="photo-container">
+            <img src={noCourse} alt="noCourse" />
+          </div>
+          <p>No course added yet</p>
+        </div>
+      )}
       {modalOpen && courseToDelete && (
         <div id="deleteModal" className="modal-overlay">
           <div className="modal-content2">

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./../UserProfile/UserProfile.css";
 import think from "../../assests/Thinking 1.png";
+import noGroup from "../../assests/no group.png";
+
 interface Group {
   id: number;
   name: string;
@@ -34,30 +36,39 @@ const GroupsPage: React.FC = () => {
   };
   return (
     <div>
-      <table className="courses-table textdest">
-        <thead>
-          <tr>
-            <th>Group</th>
-          </tr>
-        </thead>
-        <tbody>
-          {groups.map((group) => (
-            <tr key={group.id}>
-              <td>
-                <div className="minus">
-                  {group.name}
-                  <button
-                    className="remove-course-btn"
-                    onClick={() => handleRemoveCourse(group)}
-                  >
-                    <i className="fa-solid fa-user-minus"></i>
-                  </button>
-                </div>
-              </td>
+      {groups.length > 0 ? (
+        <table className="courses-table textdest">
+          <thead>
+            <tr>
+              <th>Group</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {groups.map((group) => (
+              <tr key={group.id}>
+                <td>
+                  <div className="minus">
+                    {group.name}
+                    <button
+                      className="remove-course-btn"
+                      onClick={() => handleRemoveCourse(group)}
+                    >
+                      <i className="fa-solid fa-user-minus"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <div className="payment-content ">
+          <div className="photo-container">
+            <img src={noGroup} alt="noGroup" />
+          </div>
+          <p>This user is not added to any groups yet</p>
+        </div>
+      )}
       {modalOpen && GroupToDelete && (
         <div id="deleteModal" className="modal-overlay">
           <div className="modal-content2">
