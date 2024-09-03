@@ -1,5 +1,6 @@
 import React from "react";
 import "./AddGroupModal.css"; 
+import { UserPlus ,Search} from 'react-feather';
 
 interface AddGroupModalProps {
   isOpen: boolean;
@@ -19,11 +20,19 @@ const AddGroupModal: React.FC<AddGroupModalProps> = ({ isOpen, onClose }) => {
       <div className="modal-content3">
         <h2>Add to Group</h2>
         <hr />
-        <input
-          type="text"
-          placeholder="Search"
-          className="search-input search-course"
-        />
+          {/* search */}
+          <div className="search-container">
+           <input
+              type="text"
+               placeholder="Search"
+              className="search-input search-course"
+               />
+               <div className="search-icon">
+               <Search size={20} />
+               </div>
+               </div>
+
+     
         <table className="groups-table">
           <thead>
             <tr>
@@ -36,7 +45,7 @@ const AddGroupModal: React.FC<AddGroupModalProps> = ({ isOpen, onClose }) => {
                 <div className="minus">
                   Group One
                   <button className="remove-course-btn plus mx-4">
-                    <i className="fa-solid fa-user-plus"></i>
+                  <UserPlus size={24} />  
                   </button>
                 </div>
               </td>
@@ -45,7 +54,7 @@ const AddGroupModal: React.FC<AddGroupModalProps> = ({ isOpen, onClose }) => {
               <td>  <div className="minus">
                   Group two
                   <button className="remove-course-btn plus mx-4">
-                    <i className="fa-solid fa-user-plus"></i>
+                  <UserPlus size={24} />  
                   </button>
                 </div></td>
             </tr>
@@ -53,7 +62,7 @@ const AddGroupModal: React.FC<AddGroupModalProps> = ({ isOpen, onClose }) => {
               <td>  <div className="minus ">
                   Group three
                   <button className="remove-course-btn plus mx-4">
-                    <i className="fa-solid fa-user-plus"></i>
+                  <UserPlus size={24} />  
                   </button>
                 </div></td>
             </tr>

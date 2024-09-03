@@ -1,4 +1,3 @@
-/* eslint-disable testing-library/no-node-access */
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
@@ -9,9 +8,11 @@ describe("AddCourseModal", () => {
     render(<AddCourseModal isOpen={true} onClose={() => {}} />);
 
     expect(screen.getByTestId("modal-overlay")).toBeInTheDocument();
+    
     const modalContent = screen.getByTestId("modal-content");
     expect(modalContent).toBeInTheDocument();
     expect(modalContent).toHaveTextContent("Add to course");
+
     expect(screen.getByPlaceholderText("Search")).toBeInTheDocument();
 
     const cards = screen.getAllByTestId("card-content");
@@ -22,18 +23,16 @@ describe("AddCourseModal", () => {
   });
 
   test("does not render modal content when isOpen is false", () => {
-    const { container } = render(
-      <AddCourseModal isOpen={false} onClose={() => {}} />
-    );
+    render(<AddCourseModal isOpen={false} onClose={() => {}} />);
 
-    expect(container.firstChild).toBeNull();
+    expect(screen.queryByTestId("modal-overlay")).not.toBeInTheDocument();
   });
 
   test("calls onClose when Cancel button is clicked", () => {
     const onClose = jest.fn();
     render(<AddCourseModal isOpen={true} onClose={onClose} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "Cancel" }));
+    fireEvent.click(screen.getByRole("button", { name: /Cancel/i }));
 
     expect(onClose).toHaveBeenCalledTimes(1);
   });
@@ -43,7 +42,7 @@ describe("AddCourseModal", () => {
     const consoleSpy = jest.spyOn(console, "log").mockImplementation();
     render(<AddCourseModal isOpen={true} onClose={onClose} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "Save" }));
+    fireEvent.click(screen.getByRole("button", { name: /Save/i }));
 
     expect(consoleSpy).toHaveBeenCalledWith("Course saved");
     expect(onClose).toHaveBeenCalledTimes(1);

@@ -4,6 +4,7 @@ import "./../UserProfile/UserProfile.css";
 import "./../UsersPage/UsersPage.css";
 import think from "../../assests/Thinking 1.png";
 import noCourse from "../../assests/no courses.png";
+import { UserMinus } from 'react-feather';
 
 interface Course {
   id: number;
@@ -92,7 +93,7 @@ const CoursesPage: React.FC<CoursesPageProps> = ({ fromDate, toDate }) => {
                       className="remove-course-btn"
                       data-testid="remove-course-btn"
                     >
-                      <i className="fa-solid fa-user-minus"></i>
+                      <UserMinus size={20} className="fa-user-minus" /> 
                     </button>
                   </div>
                 </td>

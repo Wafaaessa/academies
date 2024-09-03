@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Layout from "./Component/Layout/Layout";
 import UsersPage from "./Component/UsersPage/UsersPage";
 import UserProfile from "./Component/UserProfile/UserProfile";
@@ -14,6 +19,8 @@ const App: React.FC<{ router?: React.ReactNode }> = ({ router }) => {
         <Router>
           <Layout>
             <Routes>
+              <Route path="/" element={<Navigate to="/dashboard" />} />
+
               <Route path="/users" element={<UsersPage />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/user/:userId/*" element={<UserProfile />} />

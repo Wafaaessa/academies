@@ -1,5 +1,6 @@
 import React from "react";
 import "./AddCourseModal.css";
+import { UserPlus,Search } from 'react-feather';
 
 interface AddCourseModalProps {
   isOpen: boolean;
@@ -19,11 +20,17 @@ const AddCourseModal: React.FC<AddCourseModalProps> = ({ isOpen, onClose }) => {
       <div className="modal-content3" data-testid="modal-content">
         <h2>Add to course</h2>
         <hr />
-        <input
-          type="text"
-          placeholder="Search"
-          className="search-input search-course"
-        />
+        {/* search */}
+        <div className="search-container">
+           <input
+              type="text"
+               placeholder="Search"
+              className="search-input search-course"
+               />
+               <div className="search-icon">
+               <Search size={20} />
+               </div>
+               </div>
 
         <div className="course-list ">
           <div className="row mt-4">
@@ -32,8 +39,8 @@ const AddCourseModal: React.FC<AddCourseModalProps> = ({ isOpen, onClose }) => {
                 <h3>Course Name</h3>
                 <p>Description</p>
                 <button className="icon-button">
-                  <i className="fa-solid fa-user-plus"></i>
-                </button>
+                <UserPlus size={24} />             
+                   </button>
               </div>
             </div>
 
@@ -42,7 +49,17 @@ const AddCourseModal: React.FC<AddCourseModalProps> = ({ isOpen, onClose }) => {
                 <h3>Course Name</h3>
                 <p>Description</p>
                 <button className="icon-button">
-                  <i className="fa-solid fa-user-plus"></i>
+                <UserPlus size={24} />
+                                </button>
+              </div>
+            </div>
+
+            <div className="col-md-6 cards px-3">
+              <div className="card-content" data-testid="card-content">
+                <h3>Course Name</h3>
+                <p>Description</p>
+                <button className="icon-button">
+                <UserPlus size={24} />
                 </button>
               </div>
             </div>
@@ -52,7 +69,7 @@ const AddCourseModal: React.FC<AddCourseModalProps> = ({ isOpen, onClose }) => {
                 <h3>Course Name</h3>
                 <p>Description</p>
                 <button className="icon-button">
-                  <i className="fa-solid fa-user-plus"></i>
+                  <UserPlus size={24} />
                 </button>
               </div>
             </div>
@@ -62,7 +79,7 @@ const AddCourseModal: React.FC<AddCourseModalProps> = ({ isOpen, onClose }) => {
                 <h3>Course Name</h3>
                 <p>Description</p>
                 <button className="icon-button">
-                  <i className="fa-solid fa-user-plus"></i>
+                <UserPlus size={24} />
                 </button>
               </div>
             </div>
@@ -72,17 +89,7 @@ const AddCourseModal: React.FC<AddCourseModalProps> = ({ isOpen, onClose }) => {
                 <h3>Course Name</h3>
                 <p>Description</p>
                 <button className="icon-button">
-                  <i className="fa-solid fa-user-plus"></i>
-                </button>
-              </div>
-            </div>
-
-            <div className="col-md-6 cards px-3">
-              <div className="card-content" data-testid="card-content">
-                <h3>Course Name</h3>
-                <p>Description</p>
-                <button className="icon-button">
-                  <i className="fa-solid fa-user-plus"></i>
+                <UserPlus size={24}  />
                 </button>
               </div>
             </div>

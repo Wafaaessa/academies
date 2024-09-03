@@ -1,16 +1,10 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEdit,
-  faTrashAlt,
-  faFilter,
-  faPlus,
-} from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import Breadcrumbs from "./../Breadcrumbs/Breadcrumbs";
 import "./UsersPage.css";
 import think from "../../assests/Thinking 1.png";
 import noUsers from "../../assests/no users.png";
+import { Edit, Trash, Filter, PlusSquare, Search } from "react-feather";
 
 interface User {
   id: number;
@@ -298,8 +292,13 @@ const UsersPage: React.FC = () => {
   return (
     <div className="users-page" data-testid="users-page">
       {/* search */}
-      <div className="search-top">
-        <input type="text" placeholder="Search" className="search-input" />
+      <div className="search-container">
+        <div className="search-top">
+          <input type="text" placeholder="Search" className="search-input" />
+          <div className="search-icon">
+            <Search size={20} />
+          </div>
+        </div>
       </div>
       <Breadcrumbs
         items={[{ label: "Home", path: "/dashboard" }, { label: "Users" }]}
@@ -312,7 +311,7 @@ const UsersPage: React.FC = () => {
             className="add-user-btn filter"
             onClick={() => setShowFilter(!showFilter)}
           >
-            <FontAwesomeIcon icon={faFilter} /> Filters
+            <Filter className="fa-filter" /> Filters
           </button>
         </div>
         {/* show filter */}
@@ -405,7 +404,8 @@ const UsersPage: React.FC = () => {
         {/* add button */}
         <div className="b">
           <button className="add-user-btn userbtn" onClick={handleAddUser}>
-            <FontAwesomeIcon icon={faPlus} /> Add User
+            <PlusSquare className="fa-plus" />
+            Add User
           </button>
         </div>
       </div>
@@ -427,7 +427,7 @@ const UsersPage: React.FC = () => {
               <th>Role</th>
               <th>Registration</th>
               <th>Last Login</th>
-              <th>Actions</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -454,13 +454,13 @@ const UsersPage: React.FC = () => {
                     className="action-btn edit"
                     onClick={() => handleEdit(user)}
                   >
-                    <FontAwesomeIcon icon={faEdit} />
+                    <Edit className="custom-icon" />
                   </button>
                   <button
                     className="action-btn delete"
                     onClick={() => handleDelete(user)}
                   >
-                    <FontAwesomeIcon icon={faTrashAlt} />
+                    <Trash className="custom-icon" />
                   </button>
                 </td>
               </tr>

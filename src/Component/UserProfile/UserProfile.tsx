@@ -6,12 +6,11 @@ import GroupsPage from "./../NavTabs/GroupsPage";
 import PaymentsPage from "./../NavTabs/PaymentsPage";
 import FilesPage from "./../NavTabs/FilesPage";
 import InfoPage from "./../NavTabs/InfoPage";
-import { faFilter, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Breadcrumbs from "./../Breadcrumbs/Breadcrumbs";
 import AddCourseModal from "./../AddCourseModal/AddCourseModal";
 import AddGroupModal from "./../AddGroupModal/AddGroupModal";
 import AddPaymentModal from "./../AddPaymentModal/AddPaymentModal";
+import { Filter, PlusSquare, Search } from "react-feather";
 
 const UserProfile: React.FC = () => {
   const location = useLocation();
@@ -77,8 +76,14 @@ const UserProfile: React.FC = () => {
   return (
     <div className="user-profile" data-testid="user-profile">
       <header>
-        <div className="search-top">
-          <input type="text" placeholder="Search" className="search-input" />
+        {/* search */}
+        <div className="search-container">
+          <div className="search-top">
+            <input type="text" placeholder="Search" className="search-input" />
+            <div className="search-icon">
+              <Search size={20} />
+            </div>
+          </div>
         </div>
         <Breadcrumbs
           items={[
@@ -158,13 +163,13 @@ const UserProfile: React.FC = () => {
                 }`}
                 onClick={() => setShowFilter(!showFilter)}
               >
-                <FontAwesomeIcon icon={faFilter} /> Filters
+                <Filter className="fa-filter" /> Filters
               </button>
             </>
           )}
         </div>
         <button className="add-user-btn usernbtn" onClick={handleAddButton}>
-          <FontAwesomeIcon icon={faPlus} />
+          <PlusSquare className="fa-plus" />
           {getAddButtonLabel()}
         </button>
       </div>
@@ -176,9 +181,9 @@ const UserProfile: React.FC = () => {
           <h3>Enrollment Date</h3>
           <div className="row mb-3 mt-3">
             <div className="filter-field  col-md-6">
-              <label  htmlFor="fromDate"> From :</label>
+              <label htmlFor="fromDate"> From :</label>
               <input
-              id="fromDate"
+                id="fromDate"
                 type="date"
                 value={fromDate}
                 onChange={(e) => handleFilterChange("fromDate", e.target.value)}
@@ -188,7 +193,7 @@ const UserProfile: React.FC = () => {
             <div className="filter-field col-md-6 mb-3">
               <label htmlFor="toDate">To :</label>
               <input
-              id="toDate"
+                id="toDate"
                 type="date"
                 value={toDate}
                 onChange={(e) => handleFilterChange("toDate", e.target.value)}

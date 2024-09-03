@@ -1,6 +1,3 @@
-/* eslint-disable testing-library/no-node-access */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable jest/no-conditional-expect */
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";

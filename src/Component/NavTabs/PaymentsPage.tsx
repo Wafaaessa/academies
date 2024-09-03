@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "./../UserProfile/UserProfile.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEdit,
-  faTrashAlt,
-  faFilter,
-} from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faEdit,
+//   faTrashAlt,
+//   faFilter,
+// } from "@fortawesome/free-solid-svg-icons";
 import think from "../../assests/Thinking 1.png";
+import {Filter,Edit,Trash } from 'react-feather';
 
 const PaymentsPage: React.FC = () => {
   const [isOnlinePayments, setIsOnlinePayments] = useState(true);
@@ -145,8 +146,8 @@ const PaymentsPage: React.FC = () => {
         className="add-user-btn filter payment-page-filter-button"
         onClick={() => setShowFilter(!showFilter)}
       >
-        <FontAwesomeIcon icon={faFilter} /> Filters
-      </button>
+             <Filter className="fa-filter" /> Filters
+             </button>
       {showFilter && (
         <div className="filter-form">
           <h4>Filters</h4>
@@ -234,14 +235,14 @@ const PaymentsPage: React.FC = () => {
                         className="action-btn edit"
                         onClick={() => handleEdit(index)}
                       >
-                        <FontAwesomeIcon icon={faEdit} />
-                      </button>
+                  <Edit className="custom-icon" />
+                  </button>
                       <button
                         className="action-btn delete"
                         onClick={() => handleDelete(index)}
                       >
-                        <FontAwesomeIcon icon={faTrashAlt} />
-                      </button>
+                    <Trash className="custom-icon" />
+                    </button>
                     </td>
                   </tr>
                 ))

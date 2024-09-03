@@ -11,7 +11,7 @@
 .profile-nav li {
   display: inline-block;
   margin-right: 10px;
-}
+} 
 
 .profile-nav a {
   text-decoration: none;
@@ -184,10 +184,14 @@
 
 /* payment-table */
 .action-buttons {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
   width: 390px;
-  position: absolute;
-  top: 300px;
-  left: 120px;
+  position: relative;
+  /* margin-bottom: 1rem; */
+ top:-88px;
+ left: -40px;
 }
 .back-button {
   width: 390px !important;

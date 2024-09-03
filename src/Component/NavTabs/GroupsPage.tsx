@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./../UserProfile/UserProfile.css";
 import think from "../../assests/Thinking 1.png";
 import noGroup from "../../assests/no group.png";
+import { UserMinus } from 'react-feather';
 
 interface Group {
   id: number;
@@ -53,8 +54,8 @@ const GroupsPage: React.FC = () => {
                       className="remove-course-btn"
                       onClick={() => handleRemoveCourse(group)}
                     >
-                      <i className="fa-solid fa-user-minus"></i>
-                    </button>
+                      <UserMinus size={20} className="fa-user-minus" /> 
+                      </button>
                   </div>
                 </td>
               </tr>

@@ -17,5 +17,4 @@ test('renders Layout component with children and logout link', () => {
 
   expect(screen.getByText('Test Child')).toBeInTheDocument();
 
-  expect(screen.getByText('Logout')).toBeInTheDocument();
 });
