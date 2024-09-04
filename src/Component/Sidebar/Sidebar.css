@@ -5,6 +5,8 @@
   transition: width 0.3s ease;
   font-family: "Poppins";
   border-radius: 0px, 20px, 20px, 0px;
+  position: relative; 
+
 }
 
 .sidebar.expanded {
@@ -20,6 +22,7 @@
 .logo {
   width: 50px;
   height: auto;
+  margin-top: 15px;
 }
 
 .sidebar-item {
@@ -60,7 +63,12 @@
   padding: 16px;
   text-align: center;
   cursor: pointer;
+  position: absolute; 
+  top: 30px; 
+  width: 70px;
+  transition: left 0.3s ease;
 }
+
 .icon-img {
   padding-right: 20px;
 }
@@ -86,7 +94,6 @@
   width: 35px;
   height: 4px;
   margin: 5px 0;
-
   transition: all 0.3s ease;
   position: relative;
 }

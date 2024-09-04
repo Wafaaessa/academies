@@ -77,10 +77,12 @@ const Sidebar: React.FC = () => {
       data-testid="sidebar"
       className={`sidebar ${expanded ? "expanded" : ""}`}
     >
+      {/* logo */}
       <div className="logo-container">
-        <img src={logo} alt="Logo" className="logo" />
+        <img src={logo} alt="Logo" className="logo" style={{ width: expanded ? "80px" : "50px" }}  />
       </div>
-      <div className="menu-bar" onClick={handleMenuClick}>
+      {/* Menu bar button */}
+      <div className="menu-bar" onClick={handleMenuClick}  style={{ left: expanded ? "245px" : "90px" }} >
         {expanded ? (
           <button
             className="Wrapper_menuToggler__Qm7qH"
@@ -101,6 +103,7 @@ const Sidebar: React.FC = () => {
           </button>
         )}
       </div>
+      {/* sidebar content */}
       {navItems.map((item, index) => (
         <div className="sidebar-item" key={index}>
           <NavLink
