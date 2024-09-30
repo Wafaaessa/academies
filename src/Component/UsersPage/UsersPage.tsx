@@ -172,7 +172,7 @@ const UsersPage: React.FC = () => {
     }
   };
 
-  ////////////////////////validate function////////////////////////////////
+  ////////////////////////validate function///////////////////////////////
 
   const validateUser = (user: User) => {
     const errors: string[] = [];
@@ -252,7 +252,7 @@ const UsersPage: React.FC = () => {
     }
   };
 
-  ////////////////////////mass actions function////////////////////////////////
+  ////////////////////////mass actions function///////////////////////////////////////////
 
   const handleMassActionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setMassAction(e.target.value);
