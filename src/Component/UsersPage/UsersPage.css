@@ -27,6 +27,7 @@
   color: white !important;
   background-color: rgba(109, 100, 232, 1) !important;
 }
+/* filter button */
 .filter {
   margin-left: 30px !important;
   width: 142px !important;
@@ -48,6 +49,93 @@
 .add-user-btn:hover {
   background-color: rgba(40, 53, 146, 1) !important;
   color: white !important;
+}
+/* show filter */
+.filter-form2 {
+  position: absolute;
+  top: 250px;
+  left: 508px;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  z-index: 1000;
+  border-radius: 10px;
+  width: 367px;
+  height: 334px;
+  font-family: "Poppins";
+}
+
+.filter-form2 h4 {
+  margin: 0 0 10px;
+  color: rgba(40, 53, 146, 1);
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  font-family: "Poppins" !important;
+}
+
+.filter-form2 h3 {
+  margin: 0 0 10px;
+  color: rgba(109, 100, 232, 1);
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  font-family: "Poppins" !important;
+}
+.filter-field2 {
+  margin-bottom: 10px;
+}
+.filter-field2 input[type="date" i] {
+  color: rgba(138, 152, 172, 1) !important;
+  font-size: 15px !important;
+  text-transform: uppercase;
+}
+.filter-field2 label {
+  display: block;
+  margin-bottom: 5px;
+  color: rgba(102, 102, 102, 1);
+}
+
+.apply-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.label-text {
+  margin-left: 10px;
+  font-weight: 400 !important;
+  font-family: "Poppins" !important;
+  color: rgba(102, 102, 102, 1);
+  font-size: 14px;
+}
+/* Hide the default checkbox */
+.role-filter input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* Create a custom checkbox appearance */
+
+.role-filter input[type="checkbox"] + .custom-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border: 1px solid rgba(40, 53, 146, 1);
+  border-radius: 5px;
+  cursor: pointer;
+  top: 5px;
+}
+
+/* Custom appearance for the checkbox when checked */
+.role-filter input[type="checkbox"]:checked + .custom-checkbox {
+  background-color: rgba(40, 53, 146, 1);
+  border: 1px solid rgba(40, 53, 146, 1);
 }
 /* search top */
 .search-container {
@@ -353,89 +441,4 @@ hr {
 .b2 {
   margin-top: 130px !important;
 }
-.filter-form2 {
-  position: absolute;
-  top: 250px;
-  left: 508px;
-  background: white;
-  border: 1px solid #ccc;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  padding: 20px;
-  z-index: 1000;
-  border-radius: 10px;
-  width: 367px;
-  height: 334px;
-  font-family: "Poppins";
-}
 
-.filter-form2 h4 {
-  margin: 0 0 10px;
-  color: rgba(40, 53, 146, 1);
-  font-size: 20px !important;
-  font-weight: 400 !important;
-  font-family: "Poppins" !important;
-}
-
-.filter-form2 h3 {
-  margin: 0 0 10px;
-  color: rgba(109, 100, 232, 1);
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  font-family: "Poppins" !important;
-}
-.filter-field2 {
-  margin-bottom: 10px;
-}
-.filter-field2 input[type="date" i] {
-  color: rgba(138, 152, 172, 1) !important;
-  font-size: 15px !important;
-  text-transform: uppercase;
-}
-.filter-field2 label {
-  display: block;
-  margin-bottom: 5px;
-  color: rgba(102, 102, 102, 1);
-}
-
-.apply-btn {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.label-text {
-  margin-left: 10px;
-  font-weight: 400 !important;
-  font-family: "Poppins" !important;
-  color: rgba(102, 102, 102, 1);
-  font-size: 14px;
-}
-/* Hide the default checkbox */
-.role-filter input[type="checkbox"] {
-  opacity: 0;
-  position: absolute;
-  width: 0;
-  height: 0;
-}
-
-/* Create a custom checkbox appearance */
-
-.role-filter input[type="checkbox"] + .custom-checkbox {
-  position: relative;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background-color: #fff;
-  border: 1px solid rgba(40, 53, 146, 1);
-  border-radius: 5px;
-  cursor: pointer;
-  top: 5px;
-}
-
-/* Custom appearance for the checkbox when checked */
-.role-filter input[type="checkbox"]:checked + .custom-checkbox {
-  background-color: rgba(40, 53, 146, 1);
-  border: 1px solid rgba(40, 53, 146, 1);
-}

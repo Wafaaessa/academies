@@ -1,119 +1,110 @@
-
 import React from "react";
 import dash from "../../assests/dashborad.png";
 import arrow from "../../assests/expand-arrows 1.png";
 import threeusers from "../../assests/3 User.png";
 import cloud from "../../assests/cloud-storage-svgrepo-com 1.png";
 import threecolor from "../../assests/3Users.png";
+import CalendarView from "./CalendarView";
 
 import "./../UserProfile/UserProfile.css";
 import "./Dashboard.css";
-import {
-  Search,
-  Users,
-  User,
-  Clock,
-  Mail,
-  FolderMinus,
-} from "react-feather";
-
+import { Search, Users, User, Clock, Mail, FolderMinus } from "react-feather";
 
 const Dashboard: React.FC = () => {
+  const timelineData = [
+    { event: "You signed in", time: "3 hours ago" },
+    { event: "You signed out", time: "Yesterday" },
+    { event: "You signed in", time: "Yesterday" },
+    { event: "You signed out", time: "07/08/2024" },
+    { event: "You added a new course “Chimestry”", time: "07/08/2024" },
+    { event: "You deleted a course “Semester one”", time: "07/08/2024" },
+    { event: "You added a student “+201069981295”", time: "07/08/2024" },
+    { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
+    { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
+    { event: "You added a student “+201069981295”", time: "07/08/2024" },
+    { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
+    { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
+    { event: "You canceled a subscription", time: "07/08/2024" },
+    { event: "You invited a friend", time: "6 days ago" },
+    { event: "You shared a document", time: "1 week ago" },
+    { event: "You signed in", time: "3 hours ago" },
+    { event: "You signed out", time: "Yesterday" },
+    { event: "You signed in", time: "Yesterday" },
+    { event: "You signed out", time: "07/08/2024" },
+    { event: "You added a new course “Chimestry”", time: "07/08/2024" },
+    { event: "You deleted a course “Semester one”", time: "07/08/2024" },
+    { event: "You added a student “+201069981295”", time: "07/08/2024" },
+    { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
+    { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
+    { event: "You added a student “+201069981295”", time: "07/08/2024" },
+    { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
+    { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
+    { event: "You canceled a subscription", time: "07/08/2024" },
+    { event: "You invited a friend", time: "6 days ago" },
+    { event: "You shared a document", time: "1 week ago" },
+    { event: "You signed in", time: "3 hours ago" },
+    { event: "You signed out", time: "Yesterday" },
+    { event: "You signed in", time: "Yesterday" },
+    { event: "You signed out", time: "07/08/2024" },
+    { event: "You added a new course “Chimestry”", time: "07/08/2024" },
+    { event: "You deleted a course “Semester one”", time: "07/08/2024" },
+    { event: "You added a student “+201069981295”", time: "07/08/2024" },
+    { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
+    { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
+    { event: "You added a student “+201069981295”", time: "07/08/2024" },
+    { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
+    { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
+    { event: "You canceled a subscription", time: "07/08/2024" },
+    { event: "You invited a friend", time: "6 days ago" },
+    { event: "You shared a document", time: "1 week ago" },
+    { event: "You signed in", time: "3 hours ago" },
+    { event: "You signed out", time: "Yesterday" },
+    { event: "You signed in", time: "Yesterday" },
+    { event: "You signed out", time: "07/08/2024" },
+    { event: "You added a new course “Chimestry”", time: "07/08/2024" },
+    { event: "You deleted a course “Semester one”", time: "07/08/2024" },
+    { event: "You added a student “+201069981295”", time: "07/08/2024" },
+    { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
+    { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
+    { event: "You added a student “+201069981295”", time: "07/08/2024" },
+    { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
+    { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
+    { event: "You canceled a subscription", time: "07/08/2024" },
+    { event: "You invited a friend", time: "6 days ago" },
+    { event: "You shared a document", time: "1 week ago" },
+    { event: "You signed in", time: "3 hours ago" },
+    { event: "You signed out", time: "Yesterday" },
+    { event: "You signed in", time: "Yesterday" },
+    { event: "You signed out", time: "07/08/2024" },
+    { event: "You added a new course “Chimestry”", time: "07/08/2024" },
+    { event: "You deleted a course “Semester one”", time: "07/08/2024" },
+    { event: "You added a student “+201069981295”", time: "07/08/2024" },
+    { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
+    { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
+    { event: "You added a student “+201069981295”", time: "07/08/2024" },
+    { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
+    { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
+    { event: "You canceled a subscription", time: "07/08/2024" },
+    { event: "You invited a friend", time: "6 days ago" },
+    { event: "You shared a document", time: "1 week ago" },
+    { event: "You signed in", time: "3 hours ago" },
+    { event: "You signed out", time: "Yesterday" },
+    { event: "You signed in", time: "Yesterday" },
+    { event: "You signed out", time: "07/08/2024" },
+    { event: "You added a new course “Chimestry”", time: "07/08/2024" },
+    { event: "You deleted a course “Semester one”", time: "07/08/2024" },
+    { event: "You added a student “+201069981295”", time: "07/08/2024" },
+    { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
+    { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
+    { event: "You added a student “+201069981295”", time: "07/08/2024" },
+    { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
+    { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
+    { event: "You canceled a subscription", time: "07/08/2024" },
+    { event: "You invited a friend", time: "6 days ago" },
+    { event: "You shared a document", time: "1 week ago" },
+  ];
 
-const timelineData = [
-  { event: "You signed in", time: "3 hours ago" },
-  { event: "You signed out", time: "Yesterday" },
-  { event: "You signed in", time: "Yesterday" },
-  { event: "You signed out", time: "07/08/2024" },
-  { event: "You added a new course “Chimestry”", time: "07/08/2024" },
-  { event: "You deleted a course “Semester one”", time: "07/08/2024" },
-  { event: "You added a student “+201069981295”", time: "07/08/2024" },
-  { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
-  { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
-  { event: "You added a student “+201069981295”", time: "07/08/2024" },
-  { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
-  { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
-  { event: "You canceled a subscription", time: "07/08/2024" },
-  { event: "You invited a friend", time: "6 days ago" },
-  { event: "You shared a document", time: "1 week ago" },
-  { event: "You signed in", time: "3 hours ago" },
-  { event: "You signed out", time: "Yesterday" },
-  { event: "You signed in", time: "Yesterday" },
-  { event: "You signed out", time: "07/08/2024" },
-  { event: "You added a new course “Chimestry”", time: "07/08/2024" },
-  { event: "You deleted a course “Semester one”", time: "07/08/2024" },
-  { event: "You added a student “+201069981295”", time: "07/08/2024" },
-  { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
-  { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
-  { event: "You added a student “+201069981295”", time: "07/08/2024" },
-  { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
-  { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
-  { event: "You canceled a subscription", time: "07/08/2024" },
-  { event: "You invited a friend", time: "6 days ago" },
-  { event: "You shared a document", time: "1 week ago" },
-  { event: "You signed in", time: "3 hours ago" },
-  { event: "You signed out", time: "Yesterday" },
-  { event: "You signed in", time: "Yesterday" },
-  { event: "You signed out", time: "07/08/2024" },
-  { event: "You added a new course “Chimestry”", time: "07/08/2024" },
-  { event: "You deleted a course “Semester one”", time: "07/08/2024" },
-  { event: "You added a student “+201069981295”", time: "07/08/2024" },
-  { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
-  { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
-  { event: "You added a student “+201069981295”", time: "07/08/2024" },
-  { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
-  { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
-  { event: "You canceled a subscription", time: "07/08/2024" },
-  { event: "You invited a friend", time: "6 days ago" },
-  { event: "You shared a document", time: "1 week ago" },
-  { event: "You signed in", time: "3 hours ago" },
-  { event: "You signed out", time: "Yesterday" },
-  { event: "You signed in", time: "Yesterday" },
-  { event: "You signed out", time: "07/08/2024" },
-  { event: "You added a new course “Chimestry”", time: "07/08/2024" },
-  { event: "You deleted a course “Semester one”", time: "07/08/2024" },
-  { event: "You added a student “+201069981295”", time: "07/08/2024" },
-  { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
-  { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
-  { event: "You added a student “+201069981295”", time: "07/08/2024" },
-  { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
-  { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
-  { event: "You canceled a subscription", time: "07/08/2024" },
-  { event: "You invited a friend", time: "6 days ago" },
-  { event: "You shared a document", time: "1 week ago" },
-  { event: "You signed in", time: "3 hours ago" },
-  { event: "You signed out", time: "Yesterday" },
-  { event: "You signed in", time: "Yesterday" },
-  { event: "You signed out", time: "07/08/2024" },
-  { event: "You added a new course “Chimestry”", time: "07/08/2024" },
-  { event: "You deleted a course “Semester one”", time: "07/08/2024" },
-  { event: "You added a student “+201069981295”", time: "07/08/2024" },
-  { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
-  { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
-  { event: "You added a student “+201069981295”", time: "07/08/2024" },
-  { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
-  { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
-  { event: "You canceled a subscription", time: "07/08/2024" },
-  { event: "You invited a friend", time: "6 days ago" },
-  { event: "You shared a document", time: "1 week ago" },
-  { event: "You signed in", time: "3 hours ago" },
-  { event: "You signed out", time: "Yesterday" },
-  { event: "You signed in", time: "Yesterday" },
-  { event: "You signed out", time: "07/08/2024" },
-  { event: "You added a new course “Chimestry”", time: "07/08/2024" },
-  { event: "You deleted a course “Semester one”", time: "07/08/2024" },
-  { event: "You added a student “+201069981295”", time: "07/08/2024" },
-  { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
-  { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
-  { event: "You added a student “+201069981295”", time: "07/08/2024" },
-  { event: "You blocked a student “+201113843331” ", time: "07/08/2024" },
-  { event: "You deleted an instructor “+201020304050”", time: "07/08/2024" },
-  { event: "You canceled a subscription", time: "07/08/2024" },
-  { event: "You invited a friend", time: "6 days ago" },
-  { event: "You shared a document", time: "1 week ago" },
-];
-
-const hasData = timelineData.length > 0; 
+  const hasData = timelineData.length > 0;
 
   return (
     <>
@@ -130,7 +121,7 @@ const hasData = timelineData.length > 0;
       {hasData ? (
         <div className="dashboard-layout" data-testid="dash-page">
           {/* الجزئين في المنتصف تحت بعض */}
-         {/* الجزء الاول من المنتصف */}
+          {/* الجزء الاول من المنتصف */}
           <div className="middle-sections ms-4 mb-5">
             <div className="middle-section ">
               <h2>Overview</h2>
@@ -138,8 +129,11 @@ const hasData = timelineData.length > 0;
               <div className="overview-grid  ">
                 {/* المربع الأول */}
                 <div className="overview-box">
-
-                  <img src={threeusers} alt="Total Students"  className="icon-style" />
+                  <img
+                    src={threeusers}
+                    alt="Total Students"
+                    className="icon-style"
+                  />
                   <h1>500</h1>
                   <h4>Total Students</h4>
                 </div>
@@ -150,7 +144,7 @@ const hasData = timelineData.length > 0;
                     size={30}
                     color={"rgba(109, 100, 232, 1)"}
                     className="icon-style"
-                   aria-label="total instructors"
+                    aria-label="total instructors"
                   />
                   <h1>60</h1>
                   <h4>Total Instructors</h4>
@@ -162,7 +156,7 @@ const hasData = timelineData.length > 0;
                     size={30}
                     color={"rgba(224, 27, 132, 1)"}
                     className="icon-style"
-                     aria-label="total Courses"
+                    aria-label="total Courses"
                   />
                   <h1>60</h1>
                   <h4>Total Courses</h4>
@@ -187,7 +181,6 @@ const hasData = timelineData.length > 0;
                     color={"rgba(129, 206, 246, 1)"}
                     className="icon-style"
                     aria-label="Live minutes left"
-
                   />
                   <h1>60</h1>
                   <h4>Live minutes left</h4>
@@ -195,8 +188,7 @@ const hasData = timelineData.length > 0;
 
                 {/* المربع السادس */}
                 <div className="overview-box box6 section6">
-            
-                <img src={cloud} alt="GB"  className="icon-style" />
+                  <img src={cloud} alt="GB" className="icon-style" />
 
                   <h1>50</h1>
                   <h4>GB left</h4>
@@ -214,8 +206,13 @@ const hasData = timelineData.length > 0;
                 {/* زر إضافة مجموعة */}
                 <button className="action-button ">
                   {/* <Users size={20} className="fa-plus" /> Add Group */}
-                  <img src={threecolor} alt="add group"   className="fa-plus " style={{width:"18px", height:"18px"}}/>Add Group
-
+                  <img
+                    src={threecolor}
+                    alt="add group"
+                    className="fa-plus "
+                    style={{ width: "18px", height: "18px" }}
+                  />
+                  Add Group
                 </button>
                 {/* زر إضافة دورة */}
                 <button className="action-button">
@@ -233,38 +230,36 @@ const hasData = timelineData.length > 0;
             </h1>
 
             <div className="box-right">
-            <div className="timeline-scroll">
+              <div className="timeline-scroll">
+                {timelineData.map((item, index) => {
+                  const dotColor = item.event.includes("deleted")
+                    ? "rgba(254, 156, 212, 1)"
+                    : "";
 
-            {timelineData.map((item, index) => {
-              
-              const dotColor = item.event.includes("deleted") ? "rgba(254, 156, 212, 1)" : ""; 
-
-              return (
-                <div key={index}>
-                  <div>
-                  <div className="k position-relative">
-                    <div className="timeline-dot-line position-absolute">
-                      <div
-                        className="timeline-dot"
-                        style={{ backgroundColor: dotColor }} 
-                      ></div>
-                      <div className="timeline-line"></div>
+                  return (
+                    <div key={index}>
+                      <div>
+                        <div className="k position-relative">
+                          <div className="timeline-dot-line position-absolute">
+                            <div
+                              className="timeline-dot"
+                              style={{ backgroundColor: dotColor }}
+                            ></div>
+                            <div className="timeline-line"></div>
+                          </div>
+                        </div>
+                        <div className="timeline-details d-flex justify-content-between ">
+                          <p className="group1 ">{item.event}</p>
+                          <p className="group2">{item.time}</p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="timeline-details d-flex justify-content-between ">
-                    <p className="group1 ">{item.event}</p>
-                    <p className="group2">{item.time}</p>
-                  </div>
-                </div>
-                </div>
-
-              );
-            })}
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
-        </div>
-        </div>
-
       ) : (
         // "No results found"
         <div className="payment-content dash-photo" data-testid="dash-page">
@@ -273,7 +268,12 @@ const hasData = timelineData.length > 0;
           </div>
           <p>No results found</p>
         </div>
-      )} 
+      )}
+      {/* Dashboard Calendar */}
+      <div className="dash-calendar">
+        <h1>Dashboard Calendar</h1>
+        <CalendarView />
+      </div>
     </>
   );
 };
