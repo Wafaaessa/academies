@@ -15,135 +15,362 @@ body {
   font-size: 30px !important;
   padding: 25px 10px 0px 30px;
 }
-.dash-calendar h4 {
+.dash-calendar h5 {
   font-family: "Poppins" !important;
-  color: rgba(109, 100, 232, 1);
-  padding: 25px 10px 0px 30px;
-  text-align: center;
-  margin-bottom: 20px;
+  color: rgba(40, 53, 146, 1);
+  text-align: left !important;
+margin-bottom: 20px;
 }
-
+.coming {
+  font-family: "Poppins" !important;
+  color: #8A98AC;
+  text-align: left !important;
+  margin-left: 50px;
+}
 /* containers */
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   margin: 20px;
   text-align: center;
 }
 .calendar-container {
   display: flex;
   width: 100%;
+  justify-content: center;
+  flex-direction: row-reverse; 
+  gap: 20px; 
+
 }
+
 .calendar {
-  flex: 2;
+  width: 517px;
   height: 500px;
-  background-color: rgba(242, 242, 250, 1);
+  flex-shrink: 0;
   border-radius: 8px;
   padding: 15px;
+  border: 1px solid #8A98AC;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.rbc-month-view{
+  border: none;
+}
+.rbc-off-range-bg {
+  background: none;
+
+}
+.rbc-off-range {
+  color: #999999 !important;
+
+}
+
+.rbc-day-bg,
+.rbc-date-cell,
+.rbc-time-slot,
+.rbc-month-row,
+.rbc-time-header-cell,
+.rbc-time-content > * + * {
+  border: none !important;
+}
+
+.rbc-date-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: rgba(40, 53, 146, 1);
+
+}
+.rbc-button-link{
+  font-weight: 600 ; 
+}
+.rbc-header {
+  color: #8A98AC;
+  border: none !important;
+  margin-bottom: 30px;
+}
+.rbc-day-slot {
+  background-color: #ffffff;
+}
+/* events */
+.rbc-event {
+  background-color: transparent !important;
+}
+
+ /* today button */
+
+.rbc-today{
+ background-color: transparent;
+}
+
+.rbc-now .rbc-button-link {
+  color: white;
+  background-color:rgb(97, 106, 189);
+  border-radius: 50%;
+  height: 35px;
+  width:35px;
+}
+
+.rbc-agenda-table td,
+.rbc-agenda-table th {
+  border: none !important;
+}
+
+
+/* Container fortoolbar */
+.toolbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+.toolbar-hr {
+  border: none;
+  border-bottom: 1px solid #8A98AC !important;
+  margin-top: 10px;
+  margin-bottom: 15px;
+
+
+}
+.toolbar-label-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+}
+
+.toolbar-img {
+  width: 79px; 
+  height: 61px;
+}
+
+.toolbar-arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.toolbar-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+
+.toolbar-button:hover {
+  background-color: #f0f0f0; 
+}
+
+.toolbar-icon {
+  color:#8A98AC; 
+  font-size: 1.5em;
+}
+
+.toolbar-label {
+  font-size: 1.2em;
+  font-weight: bold;
+  color:#283592;
+  margin-left: 30px;
+}
+
+/* cards */
+.card {
+  position: relative;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 200px;
+}
+
+
+.card p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+
+}
+.dog-eared-corner::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 40px; 
+  height: 40px; 
+  background: #DEDEF6; 
+  clip-path: polygon(100% 0, 100% 100%, 0 100%); 
+  box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2); 
+  transform: rotate(-270deg);
+  border-radius: 8px;
+
+}
+.dog-eared-corner::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 40px; 
+  height: 40px; 
+  background: white; 
+  clip-path: polygon(100% 0, 100% 100%, 0 100%); 
+  transform: rotate(270deg); 
+
+}
+
+/* session details */
 
 .session-details-container {
   flex: 1;
   margin-left: 20px;
   background-color: rgba(255, 255, 255, 1);
   padding: 20px; 
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   border-radius: 8px; 
 }
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
+.session-card {
+  width: 100%;
+  padding: 10px;
 }
-.rbc-calendar {
-  background-color: #f5f5f5;
+.course{
+  color: rgba(40, 53, 146, 1);
+  font-weight: 800;
+
+}
+.session{
+  color: #8A98AC;
+  font-weight: 600;
+
 }
 
-.rbc-header {
-  background-color: rgba(109, 100, 232, 1);
-  color: white;
-}
-
-.rbc-day-slot {
-  background-color: #ffffff;
-}
-
-.rbc-event {
-  background-color: rgba(109, 100, 232, 1) !important;
-  color: white;
-  font-size: 14px;
-}
-
-.rbc-event:hover {
-  background-color: rgba(40, 53, 146, 1) !important;
-}
-/* buttons header */
-
-.button {
-  padding: 10px 20px;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+.watch-button {
+  background-color: white;
+  color: rgba(40, 53, 146, 1);
+  border: 1px solid rgba(40, 53, 146, 1);
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 6px 12px;
   cursor: pointer;
-  transition: background-color 0.3s;
-}
-.button-today {
-  background-color: #0056b3;
-}
-
-.button-today:hover {
-  background-color: rgba(129, 206, 246, 1);
-}
-
-.button-select-date {
-  background-color: #198754;
-}
-.button-select-date:hover {
-  background-color: rgba(8, 210, 111, 1);
-}
-
-.button-tomorrow {
-  background-color: #e0a800;
-}
-
-.button-tomorrow:hover {
-  background-color: rgba(255, 193, 7, 1);
-}
-
-.selected-date {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-top: 20px;
-  color: red;
-}
-/* session details */
-.session-details {
-  margin-top: 20px;
-  padding: 20px;
-  background-color: #f8f9fa;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: rgba(228, 227, 249, 1);
-}
-
-.session-details p {
-  margin: 5px 0;
-}
-.session-details strong {
-  color: rgba(109, 100, 232, 1);
-}
-
-.no-event-message,
-.rbc-agenda-empty {
   margin-top: 10px;
+  width: 100px;
+}
+
+.watch-button:hover {
+  background-color: rgba(40, 53, 146, 1);
+  color: white;
+  border: 1px solid white;
+}
+
+
+
+
+/* text  first colors */
+
+.purple1 {
+  color: red(40, 53, 146, 1) !important; 
+}
+
+.pink2 {
+  color: #E43692 !important;
+}
+
+.green3 {
+  color: rgba(109, 100, 232, 1) !important;
+}
+
+/* default first 3 cards */
+.card.first-three {
+  background-color: #f2f2f9 !important;
+}
+.button-pink {
+  color: #E43692 !important;
+  background-color: white;
+  border: 1px solid #E43692;
+}
+.button-pink:hover {
+  background-color: #E43692;
+  color: white !important;
+  border: 1px solid #E43692;
+}
+.button-light {
+  background-color: pink; 
+  color: rgba(109, 100, 232, 1) !important;
+  background-color: white;
+  border: 1px solid rgba(109, 100, 232, 1);
+}
+.button-light:hover {
+  background-color: rgba(109, 100, 232, 1);
+  color: white !important;
+  border: 1px solid rgba(109, 100, 232, 1);
+}
+
+/* Background  Cards colors */
+
+.card.purple {
+  background-color: #E2E4FD !important; 
+}
+
+.card.pink {
+  background-color: #FCF0F7 !important; 
+}
+
+.card.pink .course {
+  color: #E43692 !important;
+}
+.card.pink .watch-button {
+  color: #E43692 !important;
+  background-color: white;
+  border: 1px solid #E43692;
+}
+.card.pink .watch-button:hover {
+  background-color: #E43692;
+  color: white !important;
+  border: 1px solid #E43692;
+}
+.card.green {
+  background-color:#E0FEED !important; 
+  color: #08D26F !important;
+}
+.card.green .course {
+  color: #08D26F !important;
+}
+.card.green .watch-button {
+  color: #08D26F !important;
+  background-color: white;
+  border: 1px solid #08D26F;
+}
+.card.green .watch-button:hover {
+  background-color: #08D26F;
+  color: white !important;
+  border: 1px solid #08D26F;
+}
+
+/* dog-eared-corner  Cards colors */
+
+.purple .dog-eared-corner::after {
+  background-color: #2B358D !important; 
+}
+
+.pink .dog-eared-corner::after {
+  background-color: #CE3582; 
+}
+
+.green .dog-eared-corner::after {
+  background-color: #60CF79; 
+}
+
+
+/* no events msg */
+
+.no-event-message{
+  margin-top: 150px;
   color: #777;
   font-size: 16px;
   font-style: italic;
   text-align: center;
 }
-.rbc-agenda-empty {
-  margin-top: 50px;
-}
+

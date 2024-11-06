@@ -117,6 +117,7 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
       </div>
+<div className=" dashboard-container">
 
       {hasData ? (
         <div className="dashboard-layout" data-testid="dash-page">
@@ -254,12 +255,15 @@ const Dashboard: React.FC = () => {
                         </div>
                       </div>
                     </div>
+                    
                   );
                 })}
+                
               </div>
             </div>
           </div>
         </div>
+        
       ) : (
         // "No results found"
         <div className="payment-content dash-photo" data-testid="dash-page">
@@ -269,11 +273,14 @@ const Dashboard: React.FC = () => {
           <p>No results found</p>
         </div>
       )}
-      {/* Dashboard Calendar */}
-      <div className="dash-calendar">
+       {/* Dashboard Calendar */}
+       <div className="dash-calendar">
         <h1>Dashboard Calendar</h1>
         <CalendarView />
       </div>
+</div>
+
+     
     </>
   );
 };

@@ -1,6 +1,7 @@
 .sidebar {
   width: 100px;
-  height: 245vh ;
+  min-height: 100vh ;
+  height: auto;
   background: rgba(242, 242, 250, 1);
   padding: 20px;
   transition: width 0.3s ease;

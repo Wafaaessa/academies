@@ -1,83 +1,69 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import CalendarView from "./CalendarView";
-import { act } from "react-dom/test-utils";
+import Papa from "papaparse";
+import moment from "moment";
+import "@testing-library/jest-dom";
 
 jest.mock("papaparse", () => ({
-  parse: jest.fn((_, { complete }) => {
-    const mockData = [
-      {
-        session_id: "1",
-        session_name: "Math Lecture",
-        session_description: "<p>Algebra and Geometry</p>",
-        session_date: "2024-10-30",
-        session_status: "completed",
-        session_type: "Lecture",
-        course_id: "101",
-        course_name: "Mathematics",
-      },
-      {
-        session_id: "2",
-        session_name: "Physics Lecture",
-        session_description: "<p>Introduction to Mechanics</p>",
-        session_date: "2024-10-31",
-        session_status: "coming",
-        session_type: "Lecture",
-        course_id: "102",
-        course_name: "Physics",
-      },
-    ];
-    complete({ data: mockData });
-  }),
+  parse: jest.fn(),
 }));
 
 describe("CalendarView Component", () => {
+  const mockSessions = [
+    {
+      session_id: "1",
+      session_name: "Session 1",
+      session_description: "Description 1",
+      session_date: moment().format("YYYY-MM-DD"),
+      session_status: "Active",
+      session_type: "Type 1",
+      course_id: "101",
+      course_name: "Course 1",
+    },
+    {
+      session_id: "2",
+      session_name: "Session 2",
+      session_description: "Description 2",
+      session_date: moment().add(1, "day").format("YYYY-MM-DD"),
+      session_status: "Active",
+      session_type: "Type 2",
+      course_id: "102",
+      course_name: "Course 2",
+    },
+  ];
+
   beforeEach(() => {
+    (Papa.parse as jest.Mock).mockImplementation((_, options: any) => {
+      options.complete({ data: mockSessions });
+    });
+  });
+
+  it("renders CalendarView component", () => {
     render(<CalendarView />);
+    expect(screen.getByText("Latest Sessions")).toBeInTheDocument();
   });
 
-  test("renders the calendar buttons", () => {
-    expect(screen.getByText(/Schedule a lecture/i)).toBeInTheDocument();
-    expect(screen.getByText(/Today/i)).toBeInTheDocument();
-    expect(screen.getByText(/Select a Date/i)).toBeInTheDocument();
-    expect(screen.getByText(/Tomorrow/i)).toBeInTheDocument();
+  test("CalendarView Component navigates to the next and previous months using custom toolbar", () => {
+    render(<CalendarView />);
+
+    const prevButton = screen.getByRole("button", { name: /previous/i });
+    const nextButton = screen.getByRole("button", { name: /next/i });
+
+    fireEvent.click(nextButton);
+
+    fireEvent.click(prevButton);
   });
 
-  test("shows session details when a date is selected", async () => {
-    const todayButton = screen.getByText(/Today/i);
-    fireEvent.click(todayButton);
-
-    const sessionName = await screen.findByText(/Session Name:/i);
-    expect(sessionName).toBeInTheDocument();
-    expect(screen.getByText(/Math Lecture/i)).toBeInTheDocument();
-  });
-
-  test("displays a message when there are no events on a selected date", async () => {
-    jest.mock("papaparse", () => ({
-      parse: jest.fn((_, { complete }) => {
-        const mockData = [
-          {
-            session_id: "1",
-            session_name: "Math Lecture",
-            session_description: "<p>Algebra and Geometry</p>",
-            session_date: "2024-10-30",
-            session_status: "completed",
-            session_type: "Lecture",
-            course_id: "101",
-            course_name: "Mathematics",
-          },
-        ];
-        complete({ data: mockData });
-      }),
-    }));
+  test("shows a message when no events are available", async () => {
+    (Papa.parse as jest.Mock).mockImplementation((_, { complete }) => {
+      complete({ data: [] });
+    });
 
     render(<CalendarView />);
 
-    const tomorrowButtons = screen.getAllByText(/Tomorrow/i);
-    fireEvent.click(tomorrowButtons[0]);
-
-    const noEventMessage = await screen.findByText(/No events on this day/i);
-    expect(noEventMessage).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText(/No events on this day/i)).toBeInTheDocument();
+    });
   });
 });
